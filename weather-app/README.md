@@ -40,8 +40,8 @@ A modern, full-stack weather application that provides real-time weather data an
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/atmosvue.git
-cd atmosvue
+git clone https://github.com/ammarshakeel1/Full-Stack-Weather-App/tree/main/weather-app
+cd full stack weather app
 ```
 
 2. Install backend dependencies:
