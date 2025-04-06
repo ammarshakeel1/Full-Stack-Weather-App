@@ -114,18 +114,22 @@ This application is deployed online with the following configurations:
 
 ## Project Structure
 
+```
 weather-app/
-├── client/ # Frontend React application
-│ ├── public/ # Static files
-│ ├── src/ # React components and assets
-│ └── package.json # Frontend dependencies and scripts
-├── server/ # Backend Node.js application
-│ ├── controllers/ # Route controllers
-│ ├── models/ # Database models
-│ ├── routes/ # API routes
-│ ├── app.js # Express application entry point
-│ └── package.json # Backend dependencies and scripts
-└── README.md # Project documentation (this file)
+├── client/                 # Frontend React application
+│   ├── public/             # Static files
+│   ├── src/                # React components and assets
+│   ├── App.js              # Main React component
+│   ├── App.css             # Global styles
+│   └── package.json        # Frontend dependencies and scripts
+├── server/                 # Backend Node.js application
+│   ├── controllers/        # Route controllers
+│   ├── models/             # Mongoose models
+│   ├── routes/             # Express routes
+│   ├── app.js              # Express app entry point
+│   └── package.json        # Backend dependencies and scripts
+└── README.md               # Project documentation (this file)
+```
 
 ## API Endpoints
 
