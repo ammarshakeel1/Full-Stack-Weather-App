@@ -2,7 +2,15 @@ const axios = require('axios');
 
 const getWeatherData = async (location) => {
   const API_KEY = process.env.OPENWEATHER_API_KEY;
-  const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${API_KEY}&units=metric`;
+  let url;
+
+  // Check if location is coordinates (contains comma)
+  if (location.includes(',')) {
+    const [lat, lon] = location.split(',').map(coord => coord.trim());
+    url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`;
+  } else {
+    url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${API_KEY}&units=metric`;
+  }
   
   try {
     console.log('Making request to OpenWeatherMap API:', url);
@@ -17,7 +25,15 @@ const getWeatherData = async (location) => {
 
 const getForecastData = async (location) => {
   const API_KEY = process.env.OPENWEATHER_API_KEY;
-  const url = `https://api.openweathermap.org/data/2.5/forecast?q=${location}&appid=${API_KEY}&units=metric`;
+  let url;
+
+  // Check if location is coordinates (contains comma)
+  if (location.includes(',')) {
+    const [lat, lon] = location.split(',').map(coord => coord.trim());
+    url = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`;
+  } else {
+    url = `https://api.openweathermap.org/data/2.5/forecast?q=${location}&appid=${API_KEY}&units=metric`;
+  }
   
   try {
     console.log('Making request to OpenWeatherMap Forecast API:', url);
