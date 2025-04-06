@@ -1,4 +1,4 @@
-# AtmosVue - Weather Application
+# Weather Application
 
 A modern, full-stack weather application that provides real-time weather data and 5-day forecasts for any location worldwide.
 
@@ -15,109 +15,122 @@ A modern, full-stack weather application that provides real-time weather data an
 
 ### Frontend
 
-- React.js
-- CSS3 (Flexbox, Grid, Animations)
-- Axios
-- Environment Variables
+- **React.js:** Modern UI framework for dynamic user interfaces.
+- **CSS3:** Utilizes Flexbox, Grid, and animations for responsive design.
+- **Axios:** For asynchronous API requests.
+- **Environment Variables:** Seamless configuration between development and production.
 
 ### Backend
 
-- Node.js
-- Express.js
-- MongoDB
-- Mongoose
-- dotenv
-- CORS
-- Nodemon
+- **Node.js & Express.js:** RESTful API server handling weather data requests.
+- **MongoDB Atlas:** Cloud-hosted database for persistent data storage.
+- **Mongoose:** Object Data Modeling (ODM) library for MongoDB.
+- **dotenv:** Environment variable management.
+- **CORS:** Middleware to enable cross-origin requests.
+- **Nodemon:** For auto-reloading during development.
 
 ### APIs
 
-- OpenWeatherMap API
-- MongoDB Atlas
+- **OpenWeatherMap API:** Provides weather data and forecasts.
+- **MongoDB Atlas:** Cloud database for persistent data storage.
 
-## Installation
+## Installation & Setup (Local Development)
 
-1. Clone the repository:
+1. **Clone the Repository:**
 
-```bash
-git clone https://github.com/ammarshakeel1/Full-Stack-Weather-App/tree/main/weather-app
-cd full stack weather app
-```
+   ```bash
+   git clone https://github.com/ammarshakeel1/Full-Stack-Weather-App.git
+   cd Full-Stack-Weather-App/weather-app
+   ```
 
-2. Install backend dependencies:
+2. **Install Backend Dependencies:**
 
-```bash
-cd server
-npm install
-```
+   ```bash
+   cd server
+   npm install
+   ```
 
-3. Install frontend dependencies:
+3. **Install Frontend Dependencies:**
 
-```bash
-cd ../client
-npm install
-```
+   ```bash
+   cd ../client
+   npm install
+   ```
 
-4. Create environment variables:
+4. **Configure Environment Variables:**
 
-Backend (.env in server directory):
+   - **Backend (.env in `server` directory):**
 
-```
-PORT=3001
-MONGO_URI=your_mongodb_uri
-OPENWEATHER_API_KEY=your_api_key
-```
+     Create a file named `.env` inside the `server` folder and add the following:
 
-Frontend (.env in client directory):
+     ```env
+     PORT=3001
+     MONGO_URI=your_mongodb_uri
+     OPENWEATHER_API_KEY=your_openweather_api_key
+     ```
 
-```
-REACT_APP_API_URL=http://localhost:3001/api
-```
+   - **Frontend (.env in `client` directory):**
 
-## Running the Application
+     Create a file named `.env` inside the `client` folder and add the following:
 
-1. Start the backend server:
+     ```env
+     REACT_APP_API_URL=http://localhost:3001/api
+     ```
 
-```bash
-cd server
-npm run dev
-```
+## Running the Application Locally
 
-2. Start the frontend development server:
+1. **Start the Backend Server (with auto-reload):**
 
-```bash
-cd client
-npm start
-```
+   Open a terminal, navigate to the `server` folder, and run:
 
-3. Access the application:
+   ```bash
+   cd server
+   npm run dev
+   ```
 
-- Frontend: http://localhost:3000
-- Backend API: http://localhost:3001/api
+2. **Start the Frontend Development Server:**
+
+   Open a new terminal, navigate to the client folder, and run:
+
+   ```bash
+   cd client
+   npm start
+   ```
+
+3. **Access the Application:**
+
+   Frontend: http://localhost:3000
+   Backend: http://localhost:3001/api
+
+## Deployment
+
+This application is deployed online with the following configurations:
+
+- **Frontend:** Deployed on Vercel.  
+  _Note: Ensure that in production, the `REACT_APP_API_URL` environment variable is updated to your backend’s production endpoint (e.g., `https://your-render-backend-url.com/api`)._
+
+- **Backend:** Deployed on Render.  
+  Configured to use environment variables for secure API keys and MongoDB Atlas connectivity. The server listens on `process.env.PORT` as required by the hosting environment.
 
 ## Project Structure
 
-```
-atmosvue/
-├── client/                 # Frontend React application
-│   ├── public/            # Static files
-│   │   ├── components/    # React components
-│   │   ├── App.js         # Main application component
-│   │   └── App.css        # Styles
-│   └── package.json       # Frontend dependencies
-├── server/                # Backend Node.js application
-│   ├── controllers/       # Route controllers
-│   ├── models/            # Database models
-│   ├── routes/            # API routes
-│   ├── app.js             # Express application
-│   └── package.json       # Backend dependencies
-└── README.md              # Project documentation
-```
+weather-app/
+├── client/ # Frontend React application
+│ ├── public/ # Static files
+│ ├── src/ # React components and assets
+│ └── package.json # Frontend dependencies and scripts
+├── server/ # Backend Node.js application
+│ ├── controllers/ # Route controllers
+│ ├── models/ # Database models
+│ ├── routes/ # API routes
+│ ├── app.js # Express application entry point
+│ └── package.json # Backend dependencies and scripts
+└── README.md # Project documentation (this file)
 
 ## API Endpoints
 
-- `GET /api/weather?location=:location` - Get current weather
-- `GET /api/forecast?location=:location` - Get 5-day forecast
+- **GET** `/api/weather?location=:location` – Get current weather and forecast
+- **GET** `/api/forecast?location=:location` – Get 5-day weather forecast
 
 ## Contributing
 
@@ -129,10 +142,10 @@ atmosvue/
 
 ## License
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+This project is licensed under the MIT License – see the [LICENSE](../LICENSE) file for details.
 
 ## Acknowledgments
 
-- OpenWeatherMap API for weather data
-- MongoDB Atlas for database hosting
-- React.js community for excellent documentation
+- [OpenWeatherMap API](https://openweathermap.org/) for providing weather data
+- [MongoDB Atlas](https://www.mongodb.com/cloud/atlas) for hosting the database
+- [React.js Community](https://reactjs.org/) for excellent documentation and resources

@@ -80,10 +80,7 @@ A full-stack weather application that allows users to search for weather informa
    ```
 
 3. **Access the application:**
-   ```bash
-   # Open your browser and navigate to:
-   https://localhost:3000
-   ```
+   Open your browser and navigate to: https://localhost:3000
 
 ### API Endpoints
 
